@@ -62,8 +62,7 @@ class QuranLine extends StatelessWidget {
                     quranCtrl.state.overlayEntry = null;
                   },
                   onLongPressStart: (details) {
-                    if (onDefaultAyahLongPress != null) {
-                      onDefaultAyahLongPress!(details, ayah);
+                    if (onDefaultAyahLongPress != null && false) {
                       quranCtrl.toggleAyahSelection(ayah.ayahUQNumber);
                     } else {
                       final bookmarkId = allBookmarks.any((bookmark) =>
@@ -85,6 +84,11 @@ class QuranLine extends StatelessWidget {
                         final newOverlayEntry = OverlayEntry(
                           builder: (context) => AyahLongClickDialog(
                             ayah: ayah,
+                            onDefaultAyahLongPress: () {
+                              if (onDefaultAyahLongPress != null) {
+                                onDefaultAyahLongPress!(details, ayah);
+                              }
+                            },
                             position: details.globalPosition,
                           ),
                         );

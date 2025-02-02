@@ -2,11 +2,16 @@ part of '../../quran.dart';
 
 class AyahLongClickDialog extends StatelessWidget {
   const AyahLongClickDialog(
-      {super.key, this.ayah, this.ayahFonts, required this.position});
+      {super.key,
+      this.ayah,
+      this.ayahFonts,
+      required this.position,
+      this.onDefaultAyahLongPress});
 
   final AyahModel? ayah;
   final AyahFontsModel? ayahFonts;
   final Offset position;
+  final Function()? onDefaultAyahLongPress;
 
   @override
   Widget build(BuildContext context) {
@@ -16,7 +21,8 @@ class AyahLongClickDialog extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8.0)),
-            color: const Color(0xfffff5ee),
+            gradient: StaticGradients.primaryLinearGradient,
+            // color: const Color(0xfffff5ee),
             boxShadow: [
               BoxShadow(
                 color: Colors.grey.withValues(alpha: .3),
@@ -28,17 +34,17 @@ class AyahLongClickDialog extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
           margin: const EdgeInsets.all(4.0),
-          decoration: BoxDecoration(
-              borderRadius: BorderRadius.all(Radius.circular(6.0)),
-              border: Border.all(width: 2, color: const Color(0xffe8decb))),
+          // decoration: BoxDecoration(
+          //     borderRadius: BorderRadius.all(Radius.circular(6.0)),
+          //     border: Border.all(width: 2, color: const Color(0xffe8decb))),
           child: Row(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               ...[
-                0xAAFFD354,
-                0xAAF36077,
-                0xAA00CD00
+                // 0xAAFFD354,
+                // 0xAAF36077,
+                0xffFCFDFD
               ].map((colorCode) => Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 8.0),
                     child: GestureDetector(
@@ -63,26 +69,24 @@ class AyahLongClickDialog extends StatelessWidget {
                             ayahNumber: ayah!.ayahNumber,
                             ayahId: ayah!.ayahUQNumber,
                             page: ayah!.page,
-                            colorCode: colorCode,
+                            colorCode: 0xff00A991,
                           );
                         }
                         QuranCtrl.instance.state.overlayEntry?.remove();
                         QuranCtrl.instance.state.overlayEntry = null;
                       },
                       child: Icon(
-                        Icons.bookmark,
+                        Icons.bookmark_border,
                         color: Color(colorCode),
                       ),
                     ),
                   )),
-              context.verticalDivider(
-                  height: 30, color: const Color(0xffe8decb)),
               GestureDetector(
                 onTap: () {
                   if (QuranCtrl.instance.state.fontsSelected2.value == 1 ||
                       QuranCtrl.instance.state.fontsSelected2.value == 2) {
                     Clipboard.setData(ClipboardData(text: ayahFonts!.text));
-                    ToastUtils().showToast(context, "تم النسخ الى الحافظة");
+                    // ToastUtils().showToast(context, "تم النسخ الى الحافظة");
                   } else {
                     Clipboard.setData(ClipboardData(
                         text: QuranCtrl
@@ -90,16 +94,26 @@ class AyahLongClickDialog extends StatelessWidget {
                             .firstWhere((element) =>
                                 element.ayahUQNumber == ayah!.ayahUQNumber)
                             .text));
-                    ToastUtils().showToast(context, "تم النسخ الى الحافظة");
+                    // ToastUtils().showToast(context, "تم النسخ الى الحافظة");
                   }
                   QuranCtrl.instance.state.overlayEntry?.remove();
                   QuranCtrl.instance.state.overlayEntry = null;
                 },
                 child: Icon(
                   Icons.copy_rounded,
-                  color: Colors.grey,
+                  color: StaticMainColors.bgLight,
                 ),
               ),
+              SizedBox(
+                width: 5,
+              ),
+              GestureDetector(
+                onTap: onDefaultAyahLongPress,
+                child: Icon(
+                  Icons.play_circle_outline_outlined,
+                  color: StaticMainColors.bgLight,
+                ),
+              )
             ],
           ),
         ),
