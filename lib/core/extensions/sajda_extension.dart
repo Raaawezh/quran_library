@@ -20,8 +20,10 @@ extension SajdaExtension on Widget {
                   style: TextStyle(
                     color: const Color(0xff77554B),
                     fontFamily: 'kufi',
-                    // fontSize: 18,
-                    // fontSize: context.customOrientation(13.0, 18.0),
+                    fontSize: MediaQuery.orientationOf(context) ==
+                            Orientation.portrait
+                        ? 13.0
+                        : 18.0,
                     package: 'quran_library',
                   ),
                 )
