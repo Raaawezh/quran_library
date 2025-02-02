@@ -55,6 +55,7 @@ class AyahLongClickDialog extends StatelessWidget {
                             QuranCtrl.instance.state.scaleFactor.value > 1.3) {
                           // إضافة العلامة الجديدة
                           BookmarksCtrl.instance.saveBookmark(
+                            ayatText: ayah?.text ?? "non",
                             surahName: QuranCtrl.instance
                                 .getSurahDataByAyah(ayahFonts!)
                                 .arabicName,
@@ -65,6 +66,7 @@ class AyahLongClickDialog extends StatelessWidget {
                           );
                         } else {
                           BookmarksCtrl.instance.saveBookmark(
+                            ayatText: ayah?.text ?? "non",
                             surahName: ayah!.arabicName,
                             ayahNumber: ayah!.ayahNumber,
                             ayahId: ayah!.ayahUQNumber,

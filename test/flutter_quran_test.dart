@@ -19,8 +19,16 @@ void main() {
 
   test('Saving and getting Bookmarks', () async {
     final List<BookmarkModel> bookmarks = [
-      BookmarkModel(id: 0, colorCode: 0xFF000000, name: "Black bookmark"),
-      BookmarkModel(id: 1, colorCode: 0xFFFFFFFF, name: "White bookmark")
+      BookmarkModel(
+          ayatText: "test",
+          id: 0,
+          colorCode: 0xFF000000,
+          name: "Black bookmark"),
+      BookmarkModel(
+          ayatText: "test",
+          id: 1,
+          colorCode: 0xFFFFFFFF,
+          name: "White bookmark")
     ];
     final res = await quranRepository.saveBookmarks(bookmarks);
     expect(true, res);

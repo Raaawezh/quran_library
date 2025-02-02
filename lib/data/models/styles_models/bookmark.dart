@@ -4,11 +4,13 @@ class BookmarkModel {
   final int id;
   final int colorCode;
   int ayahId;
+  final String ayatText;
   int ayahNumber;
   int page;
   final String name;
 
   BookmarkModel({
+    required this.ayatText,
     required this.id,
     required this.colorCode,
     required this.name,
@@ -29,6 +31,7 @@ class BookmarkModel {
   factory BookmarkModel.fromJson(Map<String, dynamic> json) => BookmarkModel(
         id: json['id'],
         colorCode: json['color'],
+        ayatText: json['ayatText'] as String? ?? "",
         name: json['name'] ?? 'Unnamed Bookmark',
         ayahId: json['ayahId'] ?? -1,
         ayahNumber: json['ayahNumber'] ?? -1,

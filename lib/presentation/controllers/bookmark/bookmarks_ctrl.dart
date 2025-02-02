@@ -18,8 +18,8 @@ class BookmarksCtrl extends GetxController {
       .map((bookmark) => bookmark.ayahId)
       .toList();
 
-  final BookmarkModel searchBookmark =
-      BookmarkModel(id: 3, colorCode: 0xFFF7EFE0, name: 'search Bookmark');
+  final BookmarkModel searchBookmark = BookmarkModel(
+      ayatText: "test", id: 3, colorCode: 0xFFF7EFE0, name: 'search Bookmark');
 
   // final List<BookmarkModel> _defaultBookmarks = [
   //   BookmarkModel(id: 0, colorCode: 0xAAFFD354, name: 'العلامة الصفراء'),
@@ -62,8 +62,10 @@ class BookmarksCtrl extends GetxController {
     required int ayahNumber,
     required int page,
     required int colorCode,
+    required String ayatText,
   }) {
     final bookmark = BookmarkModel(
+      ayatText: ayatText,
       id: DateTime.now().millisecondsSinceEpoch, // إنشاء ID فريد
       colorCode: colorCode,
       name: surahName,
