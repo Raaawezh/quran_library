@@ -95,15 +95,9 @@ class AllQuranWidget extends StatelessWidget {
         ),
         Align(
             alignment: Alignment.center,
-            child: AspectRatio(
-              aspectRatio:
-                  MediaQuery.orientationOf(context) == Orientation.landscape
-                      ? 20 / 9
-                      : 7 / 14,
-              child: Padding(
-                padding: const EdgeInsets.symmetric(vertical: 32.0),
-                child: child,
-              ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 32.0),
+              child: child,
             )),
         Align(
           alignment: Alignment.bottomCenter,
