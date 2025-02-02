@@ -31,7 +31,6 @@ class QuranLibraryScreen extends StatelessWidget {
     this.onFontsAyahLongPress,
     this.isDark = false,
     this.isTajweed = false,
-    this.pageViewAspectRatio,
   });
 
   // /// متغير لتعطيل أو تمكين الويدجت السفلية الافتراضية [showBottomWidget]
@@ -44,7 +43,6 @@ class QuranLibraryScreen extends StatelessWidget {
   /// [useDefaultAppBar] is a bool to disable or enable the default app bar widget
   final bool useDefaultAppBar;
 
-  final double? pageViewAspectRatio;
   // /// إذا قمت بإضافة قطعة هنا فإنه سيحل محل القطعة السفلية الافتراضية [bottomWidget]
   // ///
   // /// [bottomWidget] if if provided it will replace the default bottom widget
@@ -256,24 +254,12 @@ class QuranLibraryScreen extends StatelessWidget {
                     },
                     pageSnapping: true,
                     itemBuilder: (ctx, index) {
-                      if (pageViewAspectRatio != null) {
-                        return AspectRatio(
-                          aspectRatio: pageViewAspectRatio!,
-                          child: _pageViewBuild(
-                            context,
-                            index,
-                            quranCtrl,
-                          ),
-                        );
-                      } else {
-                        return _pageViewBuild(
-                          context,
-                          index,
-                          quranCtrl,
-                        );
-                      }
-                    },
-                  )
+                      return _pageViewBuild(
+                        context,
+                        index,
+                        quranCtrl,
+                      );
+                    })
                 : _pageViewBuild(
                     context,
                     pageIndex!,
