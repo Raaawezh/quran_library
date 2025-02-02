@@ -108,7 +108,13 @@ class AyahLongClickDialog extends StatelessWidget {
                 width: 5,
               ),
               GestureDetector(
-                onTap: onDefaultAyahLongPress,
+                onTap: () {
+                  if (onDefaultAyahLongPress != null) {
+                    onDefaultAyahLongPress!();
+                  }
+                  QuranCtrl.instance.state.overlayEntry?.remove();
+                  QuranCtrl.instance.state.overlayEntry = null;
+                },
                 child: Icon(
                   Icons.play_circle_outline_outlined,
                   color: StaticMainColors.bgLight,
