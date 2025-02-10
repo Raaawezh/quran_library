@@ -3,13 +3,15 @@ part of '../../../quran.dart';
 class BookmarkModel {
   final int id;
   final int colorCode;
-  int ayahId;
+  final int ayahId;
+  final int surahId;
   final String ayatText;
   int ayahNumber;
   int page;
   final String name;
 
   BookmarkModel({
+    required this.surahId,
     required this.ayatText,
     required this.id,
     required this.colorCode,
@@ -30,6 +32,7 @@ class BookmarkModel {
 
   factory BookmarkModel.fromJson(Map<String, dynamic> json) => BookmarkModel(
         id: json['id'],
+        surahId: json['surahId'],
         colorCode: json['color'],
         ayatText: json['ayatText'] as String? ?? "",
         name: json['name'] ?? 'Unnamed Bookmark',

@@ -21,10 +21,12 @@ void main() {
     final List<BookmarkModel> bookmarks = [
       BookmarkModel(
           ayatText: "test",
+          surahId: 1,
           id: 0,
           colorCode: 0xFF000000,
           name: "Black bookmark"),
       BookmarkModel(
+          surahId: 1,
           ayatText: "test",
           id: 1,
           colorCode: 0xFFFFFFFF,

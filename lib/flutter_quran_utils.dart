@@ -270,9 +270,11 @@ class QuranLibrary {
           required int ayahId,
           required int page,
           required String ayaText,
+          required int surahId,
           required int bookmarkId}) =>
       BookmarksCtrl.instance.saveBookmark(
           surahName: surahName,
+          surahId: surahId,
           ayatText: ayaText,
           ayahNumber: ayahNumber,
           ayahId: ayahId,
