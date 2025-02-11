@@ -283,10 +283,10 @@ class QuranLibraryScreen extends StatelessWidget {
     return GetBuilder<QuranCtrl>(
       init: QuranCtrl.instance,
       builder: (quranCtrl) => GestureDetector(
-        onScaleStart: (details) => quranCtrl.state.baseScaleFactor.value =
-            quranCtrl.state.scaleFactor.value,
-        onScaleUpdate: (ScaleUpdateDetails details) =>
-            quranCtrl.updateTextScale(details),
+        // onScaleStart: (details) => quranCtrl.state.baseScaleFactor.value =
+        //     quranCtrl.state.scaleFactor.value,
+        // onScaleUpdate: (ScaleUpdateDetails details) =>
+        //     quranCtrl.updateTextScale(details),
         child: quranCtrl.textScale(
           (quranCtrl.isDownloadFonts.value
               ? quranCtrl.state.allAyahs.isEmpty ||

@@ -8,9 +8,10 @@ class AllQuranWidget extends StatelessWidget {
   final String? sajdaName;
   final Widget child;
   final Widget? topTitleChild;
-
+  final Color? textColor;
   AllQuranWidget({
     super.key,
+    this.textColor,
     required this.pageIndex,
     required this.isRight,
     required this.child,
@@ -43,7 +44,7 @@ class AllQuranWidget extends StatelessWidget {
                             fontSize: context.currentOrientation(18.0, 22.0),
                             // fontWeight: FontWeight.bold,
                             fontFamily: 'naskh',
-                            color: const Color(0xff77554B)),
+                            color:textColor?? const Color(0xff77554B)),
                       ),
                       const Spacer(),
                       Row(
@@ -56,7 +57,7 @@ class AllQuranWidget extends StatelessWidget {
                                           18.0, 22.0),
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: 'naskh',
-                                      color: const Color(0xff77554B)),
+                                      color:textColor?? const Color(0xff77554B)),
                                 )),
                       ),
                     ],
@@ -73,7 +74,7 @@ class AllQuranWidget extends StatelessWidget {
                                           18.0, 22.0),
                                       // fontWeight: FontWeight.bold,
                                       fontFamily: 'naskh',
-                                      color: const Color(0xff77554B)),
+                                      color:textColor?? const Color(0xff77554B)),
                                 )),
                       ),
                       const Spacer(),
@@ -85,7 +86,7 @@ class AllQuranWidget extends StatelessWidget {
                             fontSize: context.currentOrientation(18.0, 22.0),
                             // fontWeight: FontWeight.bold,
                             fontFamily: 'naskh',
-                            color: const Color(0xff77554B)),
+                            color:textColor?? const Color(0xff77554B)),
                       ),
                       SizedBox(width: 16),
                       topTitleChild ?? SizedBox.shrink(),
@@ -117,7 +118,7 @@ class AllQuranWidget extends StatelessWidget {
                           style: TextStyle(
                             fontSize: context.currentOrientation(18.0, 22.0),
                             fontFamily: 'naskh',
-                            color: const Color(0xff77554B),
+                            color:textColor?? const Color(0xff77554B),
                             package: 'quran_library',
                           ),
                         ),
@@ -131,7 +132,7 @@ class AllQuranWidget extends StatelessWidget {
                         style: TextStyle(
                           fontSize: context.currentOrientation(20.0, 22.0),
                           fontFamily: 'naskh',
-                          color: const Color(0xff77554B),
+                          color:textColor?? const Color(0xff77554B),
                           package: 'quran_library',
                         ),
                       ),
@@ -163,7 +164,7 @@ class AllQuranWidget extends StatelessWidget {
                         style: TextStyle(
                           fontSize: context.currentOrientation(20.0, 22.0),
                           fontFamily: 'naskh',
-                          color: const Color(0xff77554B),
+                          color:textColor?? const Color(0xff77554B),
                           package: 'quran_library',
                         ),
                       ),
@@ -180,7 +181,7 @@ class AllQuranWidget extends StatelessWidget {
                           style: TextStyle(
                             fontSize: context.currentOrientation(18.0, 22.0),
                             fontFamily: 'naskh',
-                            color: const Color(0xff77554B),
+                            color:textColor?? const Color(0xff77554B),
                             package: 'quran_library',
                           ),
                         ),

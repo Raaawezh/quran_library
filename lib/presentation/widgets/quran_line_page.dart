@@ -21,6 +21,7 @@ class QuranLinePage extends StatelessWidget {
   final String? juzName;
   final String? sajdaName;
   final Widget? topTitleChild;
+  
   QuranLinePage(
       {super.key,
       required this.pageIndex,
@@ -61,6 +62,7 @@ class QuranLinePage extends StatelessWidget {
 
   Widget towFirstSurahs(BuildContext context) {
     return AllQuranWidget(
+      textColor: textColor,
         pageIndex: pageIndex,
         languageCode: languageCode,
         juzName: juzName,
@@ -158,6 +160,7 @@ class QuranLinePage extends StatelessWidget {
   Widget otherSurahs(BuildContext context) {
     return LayoutBuilder(builder: (context, constraints) {
       return AllQuranWidget(
+        textColor:textColor ,
         pageIndex: pageIndex,
         isRight: pageIndex.isEven ? true : false,
         languageCode: languageCode,
