@@ -24,6 +24,8 @@ class BookmarkModel {
   Map<String, dynamic> toJson() => {
         'id': id,
         'ayahId': ayahId,
+        "surahId": surahId,
+        'ayatText': ayatText,
         'ayahNumber': ayahNumber,
         'page': page,
         'color': colorCode,
@@ -31,13 +33,13 @@ class BookmarkModel {
       };
 
   factory BookmarkModel.fromJson(Map<String, dynamic> json) => BookmarkModel(
-        id: json['id'],
-        surahId: json['surahId'],
-        colorCode: json['color'],
-        ayatText: json['ayatText'] as String? ?? "",
-        name: json['name'] ?? 'Unnamed Bookmark',
-        ayahId: json['ayahId'] ?? -1,
-        ayahNumber: json['ayahNumber'] ?? -1,
-        page: json['page'] ?? -1,
+        id: json['id'] as int? ?? 0,
+        surahId: json['surahId'] as int? ?? 0,
+        colorCode: json['color'] as int? ?? 0,
+        ayatText: json['ayatText'] as String? ?? "--",
+        name: json['name'] as String? ?? 'Unnamed Bookmark',
+        ayahId: json['ayahId'] as int? ?? -1,
+        ayahNumber: json['ayahNumber'] as int? ?? -1,
+        page: json['page'] as int? ?? -1,
       );
 }
