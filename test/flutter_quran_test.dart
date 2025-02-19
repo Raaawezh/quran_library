@@ -22,10 +22,12 @@ void main() {
       BookmarkModel(
           ayatText: "test",
           surahId: 1,
+          dateTime: DateTime.now(),
           id: 0,
           colorCode: 0xFF000000,
           name: "Black bookmark"),
       BookmarkModel(
+          dateTime: DateTime.now(),
           surahId: 1,
           ayatText: "test",
           id: 1,

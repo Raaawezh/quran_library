@@ -8,9 +8,11 @@ class BookmarkModel {
   final String ayatText;
   int ayahNumber;
   int page;
+  final DateTime? dateTime;
   final String name;
 
   BookmarkModel({
+    required this.dateTime,
     required this.surahId,
     required this.ayatText,
     required this.id,
@@ -25,6 +27,7 @@ class BookmarkModel {
         'id': id,
         'ayahId': ayahId,
         "surahId": surahId,
+        "dateTime": dateTime.toString(),
         'ayatText': ayatText,
         'ayahNumber': ayahNumber,
         'page': page,
@@ -35,6 +38,9 @@ class BookmarkModel {
   factory BookmarkModel.fromJson(Map<String, dynamic> json) => BookmarkModel(
         id: json['id'] as int? ?? 0,
         surahId: json['surahId'] as int? ?? 0,
+        dateTime: (json["dateTime"] as String?) == null
+            ? null
+            : DateTime.parse(json['dateTime'] as String? ?? ""),
         colorCode: json['color'] as int? ?? 0,
         ayatText: json['ayatText'] as String? ?? "--",
         name: json['name'] as String? ?? 'Unnamed Bookmark',

@@ -19,6 +19,7 @@ class BookmarksCtrl extends GetxController {
       .toList();
 
   final BookmarkModel searchBookmark = BookmarkModel(
+      dateTime: DateTime.now(),
       surahId: -1,
       ayatText: "test",
       id: 3,
@@ -70,6 +71,7 @@ class BookmarksCtrl extends GetxController {
       required int surahId}) {
     final bookmark = BookmarkModel(
       ayatText: ayatText,
+      dateTime: DateTime.now(),
       surahId: surahId,
       id: DateTime.now().millisecondsSinceEpoch, // إنشاء ID فريد
       colorCode: colorCode,
