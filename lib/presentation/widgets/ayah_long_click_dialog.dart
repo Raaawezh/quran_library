@@ -19,6 +19,7 @@ class AyahLongClickDialog extends StatelessWidget {
       top: position.dy - 70,
       left: position.dx - 100,
       child: Container(
+        height: 55,
         decoration: BoxDecoration(
             borderRadius: BorderRadius.all(Radius.circular(8.0)),
             gradient: StaticGradients.primaryLinearGradient,
@@ -32,7 +33,7 @@ class AyahLongClickDialog extends StatelessWidget {
               )
             ]),
         child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 2.0),
+          padding: const EdgeInsets.symmetric(horizontal: 6.0, vertical: 0.0),
           margin: const EdgeInsets.all(4.0),
           // decoration: BoxDecoration(
           //     borderRadius: BorderRadius.all(Radius.circular(6.0)),
@@ -82,6 +83,7 @@ class AyahLongClickDialog extends StatelessWidget {
                       child: Icon(
                         Icons.bookmark_border,
                         color: Color(colorCode),
+                        size: 28,
                       ),
                     ),
                   )),
@@ -106,6 +108,7 @@ class AyahLongClickDialog extends StatelessWidget {
                 child: Icon(
                   Icons.copy_rounded,
                   color: StaticMainColors.bgLight,
+                  size: 28,
                 ),
               ),
               SizedBox(
@@ -122,6 +125,7 @@ class AyahLongClickDialog extends StatelessWidget {
                 child: Icon(
                   Icons.play_circle_outline_outlined,
                   color: StaticMainColors.bgLight,
+                  size: 28,
                 ),
               )
             ],
