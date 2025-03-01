@@ -71,7 +71,7 @@ flutter:
   fonts:
     - family: hafs
       fonts:
-        - asset: packages/quran_library/assets/fonts/hafs.ttf
+        - asset: packages/quran_library/assets/fonts/UthmanicHafs_V20.ttf
     - family: kufi
       fonts:
         - asset: packages/quran_library/assets/fonts/Kufam-Regular.ttf
